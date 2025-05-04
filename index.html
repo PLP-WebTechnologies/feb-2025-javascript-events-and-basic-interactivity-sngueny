@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Space Explorer <span class="accent">Hub</span></h1>
+        <p class="tagline">Discover the wonders of our universe</p>
+    </header>
+
+    <main>
+        <!-- Interactive Section 1: Planet Explorer -->
+        <section id="planet-explorer">
+            <h2>Planet Explorer</h2>
+            <div class="planets-container">
+                <div class="planet" id="mercury" data-planet="mercury">
+                    <div class="planet-circle mercury"></div>
+                    <p>Mercury</p>
+                </div>
+                <div class="planet" id="venus" data-planet="venus">
+                    <div class="planet-circle venus"></div>
+                    <p>Venus</p>
+                </div>
+                <div class="planet" id="earth" data-planet="earth">
+                    <div class="planet-circle earth"></div>
+                    <p>Earth</p>
+                </div>
+                <div class="planet" id="mars" data-planet="mars">
+                    <div class="planet-circle mars"></div>
+                    <p>Mars</p>
+                </div>
+            </div>
+            <div id="planet-info" class="planet-info">
+                <h3>Select a planet to learn more</h3>
+                <p>Hover over a planet for a preview, click to see details!</p>
+            </div>
+        </section>
+
+        <!-- Interactive Section 2: Tabbed Content -->
+        <section id="space-facts">
+            <h2>Space Knowledge Base</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="astronomy">Astronomy</button>
+                <button class="tab-btn" data-tab="exploration">Space Exploration</button>
+                <button class="tab-btn" data-tab="future">Future Missions</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="astronomy">
+                    <h3>Astronomy Basics</h3>
+                    <p>Astronomy is the scientific study of celestial objects such as stars, planets, comets, and galaxies. Modern astronomers use advanced technologies like radio telescopes and space-based observatories to study the universe.</p>
+                </div>
+                <div class="tab-pane" id="exploration">
+                    <h3>Human Space Exploration</h3>
+                    <p>Since Yuri Gagarin's historic flight in 1961, humans have ventured beyond Earth's atmosphere to explore the cosmos. From the Apollo moon landings to the International Space Station, these missions have expanded our understanding of space.</p>
+                </div>
+                <div class="tab-pane" id="future">
+                    <h3>Future Space Missions</h3>
+                    <p>Upcoming missions include Mars sample return missions, Europa Clipper to study Jupiter's moon, and the Nancy Grace Roman Space Telescope. These missions aim to answer fundamental questions about our solar system and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section 3: Image Slideshow -->
+        <section id="gallery">
+            <h2>Space Image Gallery</h2>
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="/nebula.jpg" alt="Galaxy Image" class="slide-img" width="800" height="400">
+                    <div class="slide-caption">Spiral Galaxy</div>
+                </div>
+                <div class="slide">
+                    <img src="/colorful.jpg" alt="Nebula Image" class="slide-img" width="800" height="400">
+                    <div class="slide-caption">Colorful Nebula</div>
+                </div>
+                <div class="slide">
+                    <img src="/Gasdwarf.jpg" alt="Planet Image" class="slide-img" width="800" height="400">
+                    <div class="slide-caption">Gas Giant</div>
+                </div>
+                <button class="slide-btn prev-btn">❮</button>
+                <button class="slide-btn next-btn">❯</button>
+                <div class="slide-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section 4: Form with Validation -->
+        <section id="join-explorers">
+            <h2>Join Our Space Explorers</h2>
+            <form id="explorer-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Primary Interest</label>
+                    <select id="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="astronomy">Astronomy</option>
+                        <option value="space-travel">Space Travel</option>
+                        <option value="aliens">Extraterrestrial Life</option>
+                        <option value="technology">Space Technology</option>
+                    </select>
+                    <span class="error-message" id="interest-error"></span>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="terms" required>
+                        I agree to the Space Explorer terms
+                    </label>
+                    <span class="error-message" id="terms-error"></span>
+                </div>
+                <button type="submit" id="submit-btn">Sign Up</button>
+            </form>
+            <div id="form-feedback" class="hidden">
+                <h3>Welcome aboard, Space Explorer!</h3>
+                <p>Your registration has been received. Get ready for an amazing journey!</p>
+            </div>
+        </section>
+
+        <!-- Easter Egg / Secret Feature (triggered by key combination) -->
+        <div id="secret-feature" class="hidden">
+            <div class="secret-content">
+                <h3>🌠 Secret Space Mission Unlocked! 🌠</h3>
+                <p>You've discovered our hidden mission control center!</p>
+                <button id="close-secret">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Space Explorer Hub </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
